@@ -1,0 +1,176 @@
+@use '../../../../styles/vars';
+
+
+// PARTIE FORMULAIRE POUR COMMENTAIRE
+
+//* DESKTOP VERSION =================
+
+@media screen and (min-width: 900px) {
+
+    .movieDetails__description-comments {
+        display: flex;
+        justify-content: center;
+        margin-top: 2.5rem;
+
+        &-form {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: space-around;
+
+            // Formulaire
+            &--content {
+                width: 100%;
+                // overflow-x: scroll;
+            }
+
+            // Zone de texte du formulaire
+            &--textArea {
+                width: 100%;
+                height: 60px;
+                text-align: center;
+                background-color: vars.$theme1-primary;
+                color: vars.$theme1-secondary;
+                border: vars.$theme1-secondary solid 2px;
+                border-radius: 10px;
+                padding: 0.5rem;
+                margin-bottom: 0.5rem;
+
+                // Retire le focus sur la zone de texte
+                &:focus {
+                    outline: none !important;
+                }
+            }
+
+            // Bouton de soumission du formulaire
+            &--button {
+                border: none;
+                background: none;
+                background-color: vars.$theme1-secondary;
+                color: vars.$theme1-primary;
+                width: 30%;
+                height: 1.4rem;
+                border-radius: 6px;
+                font-size: 1rem;
+                font-weight: bold;
+                margin-bottom: 2rem;
+            }
+
+            // Mise en forme du placeholder
+            ::placeholder {
+                color: vars.$theme1-secondary;
+                font-size: 0.8rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+    // ZONE D'AFFICHAGE DES COMMENTAIRES UTILISATEURS
+    .movieDetails__comments {
+        border-top: vars.$theme1-secondary solid 1px;
+
+        // Pseudo de l'utilisateur
+        &-pseudo {
+            font-size: 1.2rem;
+            margin: 2rem 0 1rem 0;
+        }
+
+        // Commentaire de l'utilisateur
+        &-comment {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    // Scroll ancre ralentit
+    #movieDetails__comments {
+        scroll-behavior: smooth;
+    }
+}
+
+
+//* MOBILE VERSION =================
+
+@media screen and (max-width: 900px) {
+
+    .movieDetails__description-comments-form {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 3rem;
+
+        // Formulaire
+        &--content {
+            width: 100%;
+            // overflow-x: scroll;
+        }
+
+        // Zone de texte du formulaire
+        &--textArea {
+            width: 100%;
+            height: 60px;
+            text-align: center;
+            background-color: vars.$theme1-primary;
+            color: vars.$theme1-secondary;
+            border: vars.$theme1-secondary solid 2px;
+            border-radius: 10px;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+
+            // Retire le focus sur la zone de texte
+            &:focus {
+                outline: none !important;
+            }
+        }
+
+        // Bouton de soumission du formulaire
+        &--button {
+            border: none;
+            background: none;
+            background-color: vars.$theme1-secondary;
+            color: vars.$theme1-primary;
+            width: 30%;
+            height: 1.4rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+
+        // Mise en forme du placeholder
+        ::placeholder {
+            color: vars.$theme1-secondary;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+    }
+
+    // ZONE D'AFFICHAGE DES COMMENTAIRES UTILISATEURS
+    .movieDetails__comments {
+
+        // Pseudo de l'utilisateur
+        &-pseudo {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        // Commentaire de l'utilisateur
+        &-comment {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    // Scroll ancre ralentit
+    #movieDetails__comments {
+        scroll-behavior: smooth;
+    }
+
+    // FOOTER
+    .footer {
+        display: none;
+        // position:sticky ;
+        // padding-bottom: 130px;
+    }
+}
